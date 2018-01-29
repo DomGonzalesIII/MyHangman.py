@@ -1,4 +1,5 @@
-#First take at hangman before reading chapter
+# First take at hangman before reading chapter
+# Next step after chapter is making this word for varying lengths of secret words
 import time
 
 print('Welcome to hangman!') # prints a simple welcome to the player
@@ -18,41 +19,44 @@ while wannaPlay = True:      # the entire game is housed within a while loop tha
     letterTwoGuessed = False
     letterThrGuessed = False
     bodyParts = 0            # the value in bodyParts and the status of guessed will control when the game ends
-    missedLetters = ''       # this variable will carry a list of the player's previos incorrect guesses
+    missedLetters = 'Missed letters:'       # this variable will carry a list of the player's previos incorrect guesses
     head = '      '          # this variable will add the head when the player makes their first wrong guess
     body = '       '         # this variable will add the body and arms as the player makes more wrong guesses
     legs = '       '         # this variable will add the legs as the player makes their last wrong guesses
+    spaceOne   = '___ '      # the following three variables creat blanks that correctly guessed letters will be displayed on
+    spaceTwo   = '___ '
+    spaceThree = '___ '
+    # need variable to check if player has guessed this letter before. How?
+    
+    while guessed = False and bodyParts != 6:
+        print('     +---+     ')  # the following print statements print the hangman character as incorrect guesses are made
+        print(head + '   |    ')
+        print(body + '  |     ')
+        print(legs + '  |     ')
+        print('        ===    ')
+        print(  missedLetters  )  # this contains a list of missed 
+        print( spaceOne + spaceTwo + spaceThree) # prints blank spaces
 
-# while guessed == false and bodyParts != 6:
+        print('Guess a letter.')
+        userGuess = input()  # this takes the user's input as a guessed char (maybe add char(userGuess) if that's a thing
 
-''' the following while loop is only to validate body part/stand print alignment,
-    it doesn't check correct/incorrect guesses yet '''
-while bodyParts < 7:
+'''
+        while userGuess == wayToTellIfTheyAlreadyGuessedThisLetter:
+            print('Sorry, you've already guessed that letter.\nPlease guess again.')
+            userGuess =input
+'''
+        if userGuess = letterOne:
+            print ('That\'s correct! \'' + userGuess + '\' is the first letter of the secret word.')
+            letterOneGuessed = True
+            spaceOne = '_' + userGuess + '_ '
+        elif userGuess = letterTwo:
 
-    print('     +---+     ')
-    print(head + '   |    ')
-    print(body + '  |     ')
-    print(legs + '  |     ')
-    print('        ===    ')
-    print('Missed letters:')
-    print(  missedLetters  )
-    print('Guess a letter.')
-    userGuess = input()
-    # check guess against letters in secret word
-   
-    if bodyParts == 0:
-        head = '     O'
-    elif bodyParts == 1:
-        body = '     | '
-    elif bodyParts == 2:
-        body = '    /| '
-    elif bodyParts == 3:
-        body = '    /|\\'
-    elif bodyParts == 4:
-        legs = '      \\'
-    elif bodyParts == 5:
-        legs = '    / \\'
-    else:
-        print('Sorry, you lose.')
+        elif userGuess = letterThree:
 
-    bodyParts = bodyParts + 1
+        else:
+
+
+        if letterOneGuessed == True and letterTwoGuessed == True and letterThrGuessed == True:
+            guessed = True
+        else
+            guessed = False
